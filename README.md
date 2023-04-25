@@ -11,8 +11,8 @@ For example the results from a map need to be shuffled before being sent to redu
 **Task Checklist and Requirements**
 
 - [x] Import text file
-- [ ] Data Cleaning
-- [ ] Split Data in Parts   
+- [x] Data Cleaning
+- [x] Split Data in Parts   
 - [ ] Implement the Map Function
 - [ ] Implement the Shuffle Function
 - [ ] Implement the Reduce Function
