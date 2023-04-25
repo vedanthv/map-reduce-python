@@ -12,3 +12,11 @@ def data_clean(text):
   finaltext = "".join([s for s in onlyText.strip().splitlines(True) if s.strip()]) # Removing the null lines
   return finaltext
 
+# Split Data
+
+def splitlines(text,limit):
+  linessplit = text.splitlines() # Splitting the lines into a list
+  split1 = linessplit[0:limit] # Creating the first split with the first limit number of lines into split 1
+  split2 = linessplit[limit:] # Creating the second split with the first limit number of lines into split 2
+  return split1,split2
+
