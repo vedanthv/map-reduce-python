@@ -45,3 +45,11 @@ def partition(sorted_list) :
     else : sort2out.append(i)
  return sort1out,sort2out    
 
+# Reducer
+def reducer(part_out1,out_queue) :
+  sum_reduced = []
+  count = 1
+  for i in range(0,len(part_out1)): # for every word in the sentence
+    if i < len(part_out1)-1: # until the whole word parsed
+      if part_out1[i] == part_out1[i+1]:
+       count = count+1 # count the number of words
