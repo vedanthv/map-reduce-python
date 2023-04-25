@@ -20,3 +20,12 @@ def splitlines(text,limit):
   split2 = linessplit[limit:] # Creating the second split with the first limit number of lines into split 2
   return split1,split2
 
+# Mapper Function
+
+def mapper(text,out_queue):
+  keyval = []
+  for i in text:
+    wordsplit = i.split()
+    for j in wordsplit:
+      keyval.append([j,1]) # Append each word in the line and store it in k-v format like ["word",1] as a list
+    out_queue.put(keyval)
