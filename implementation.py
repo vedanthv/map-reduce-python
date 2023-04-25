@@ -1,5 +1,8 @@
 import re
 import pandas as pd
+import threading
+import queue
+
 
 # Reading the input
 inputfile = open(r'D:\University\Semester 6\map-reduce-python\input.txt',"r")
@@ -54,9 +57,22 @@ def reducer(part_out1,out_queue) :
       if part_out1[i] == part_out1[i+1]:
        count = count+1 # count the number of words
       else : 
-       sum_reduced.append([part_out1[i][0],count])  #Appending the word along with count to sum_reduced list as ["word",count]
+       sum_reduced.append([part_out1[i][0],count])  # Appending the word along with count to sum_reduced list as ["word",count]
        count = 1 # if we dont have any count or word dooes not appear again count is 1
     else:
       sum_reduced.append(part_out1[i]) # Appending last word of the txt file
   out_queue.put(sum_reduced)
 
+# Multi Threading
+def multi_thread_function(func,map1_input,map2_input):  # func is the function to be used with two threads taking two inputs map1_input and map2_input
+  my_queue1 = queue.Queue()  # Using queue to store the values of mapper output to use them in sort function
+  my_queue2 = queue.Queue()
+  t1 = threading.Thread(target=func, args=(map1_input,my_queue1)) 
+  t2 = threading.Thread(target=func, args=(map2_input,my_queue2))  
+  t1.start() # Starting the execution of thread1
+  t2.start() # Starting the execution of thread2 to run simultaneously with thread1
+  t1.join()  # Waiting for the thread1 to be completely executed
+  t2.join()  # Waiting for the thread2 to be completely executed
+  list1out = my_queue1.get() # Getting the values from the queue into a variable to return its value
+  list2out = my_queue2.get()
+  return list1out,list2out
