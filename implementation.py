@@ -76,3 +76,17 @@ def multi_thread_function(func,map1_input,map2_input):  # func is the function t
   list1out = my_queue1.get() # Getting the values from the queue into a variable to return its value
   list2out = my_queue2.get()
   return list1out,list2out
+
+# Main Function
+def main_function(text):  
+  cleantext = data_clean(text)
+  linessplit = splitlines(cleantext,5000)
+  mapperout = multi_thread_function(mapper,linessplit[0],linessplit[1]) 
+  print(mapperout)
+  sortedwords = sortedlists(mapperout[0],mapperout[1])
+  slicedwords = partition(sortedwords)
+  reducerout = multi_thread_function(reducer,slicedwords[0],slicedwords[1])
+  return reducerout[0]+reducerout[1]
+
+output = main_function(text)
+pd.DataFrame(output).to_csv("Output.csv",index=False,header = ["Word","Frequency"]) # Saving file as a .csv file in the current directory
