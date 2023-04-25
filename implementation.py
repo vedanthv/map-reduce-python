@@ -1,4 +1,5 @@
 import re
+import pandas as pd
 
 # Reading the input
 inputfile = open(r'D:\University\Semester 6\map-reduce-python\input.txt',"r")
@@ -35,4 +36,12 @@ def sortedlists(list1,list2):
   return out
 
 # Partition 
+def partition(sorted_list) :
+ sort1out = []
+ sort2out = []
+ for i in sorted_list:
+    if i[0][0] < 'n': # Partitioning the sorted word list into two separate lists 
+      sort1out.append(i) # with first list containing words starting with a-m and n-z into second
+    else : sort2out.append(i)
+ return sort1out,sort2out    
 
