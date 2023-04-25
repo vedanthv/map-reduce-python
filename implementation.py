@@ -53,7 +53,10 @@ def reducer(part_out1,out_queue) :
     if i < len(part_out1)-1: # until the whole word parsed
       if part_out1[i] == part_out1[i+1]:
        count = count+1 # count the number of words
-    else : 
+      else : 
        sum_reduced.append([part_out1[i][0],count])  #Appending the word along with count to sum_reduced list as ["word",count]
        count = 1 # if we dont have any count or word dooes not appear again count is 1
-    
+    else:
+      sum_reduced.append(part_out1[i]) # Appending last word of the txt file
+  out_queue.put(sum_reduced)
+
