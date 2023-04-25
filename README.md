@@ -16,9 +16,9 @@ For example the results from a map need to be shuffled before being sent to redu
 - [x] Data Cleaning
 - [x] Split Data in Parts   
 - [x] Implement the Map Function
-- [ ] Implement the Shuffle Function
+- [x] Implement the Shuffle Function
 - [x] Implement the Reduce Function
-- [ ] Document the project
+- [x] Document the project
 - [x] Add requirements.txt file
 
 ### How to Run?
@@ -45,6 +45,5 @@ For example the results from a map need to be shuffled before being sent to redu
 
 ### Contributor
 
-**Vedanth V Baliga**
-
-**USN : ENG20DS0044**
+Vedanth V Baliga<br>
+USN : ENG20DS0044
