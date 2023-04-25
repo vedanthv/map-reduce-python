@@ -33,7 +33,7 @@ For example the results from a map need to be shuffled before being sent to redu
 
 1. Map Function Intermidiate Output
 
-<img src = "https://github.com/vedanthv/map-reduce-python/blob/master/map-reduce.jpg">
+<img src = "https://github.com/vedanthv/map-reduce-python/blob/master/intermidiate-map.PNG">
 
 2. Reduce Function Intermidiate Output
 
