@@ -8,9 +8,19 @@ For example the results from a map need to be shuffled before being sent to redu
 
 **Task Checklist and Requirements**
 
+- [ ] Import text file
+- [ ] Data Cleaning
+- [ ] Split Data in Parts   
 - [ ] Implement the Map Function
-- [ ] Implement the Reduce Function
 - [ ] Implement the Shuffle Function
-- [ ] Document the code
+- [ ] Implement the Reduce Function
+- [ ] Document the project
 - [ ] Add requirements.txt file
 
+**How to Run?**
+
+**Output Screenshots**
+
+**Contributors**
+Vedanth V Baliga
+USN : ENG20DS0044
